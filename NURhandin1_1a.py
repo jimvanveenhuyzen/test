@@ -9,21 +9,12 @@ def ln_factorial(n):
 def ln_poisson(lambdas,k):
     return np.int32(k)*np.float32(np.log(lambdas)) - np.float32(lambdas) - \
         np.float32(ln_factorial(k)) #transforming to log space
+        
+def poisson(lambdas,k):
+    return np.float32(np.exp(ln_poisson(lambdas,k)))
 
-
-print(ln_poisson(1,0))
-print(ln_poisson(5,10))
-print(ln_poisson(3,21))
-print(ln_poisson(2.6,40))
-print(ln_poisson(101,200))
-
-print("The value is",np.float32(np.exp(ln_poisson(1,0))))
-print("The value is",np.float32(np.exp(ln_poisson(5,10))))
-print("The value is",np.float32(np.exp(ln_poisson(3,21))))
-print("The value is",np.float32(np.exp(ln_poisson(2.6,40))))
-print("The value is",np.float32(np.exp(ln_poisson(101,200))))
-
-lambda_input = np.float32(input('please input lambda:\n'))
-k_input = np.int32(input('please input k:\n'))
-print("The value is",np.float32(np.exp(ln_poisson(lambda_input, k_input))))
-
+print("The value of poisson(lambda=1,k=0) is",poisson(1,0))
+print("The value of poisson(lambda=5,k=10) is",poisson(5,10))
+print("The value of poisson(lambda=3,k=21) is",poisson(3,21))
+print("The value of poisson(lambda=2.6,k=40) is",poisson(2.6,40))
+print("The value of poisson(lambda=101,k=200) is",poisson(101,200))
