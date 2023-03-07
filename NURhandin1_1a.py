@@ -1,8 +1,8 @@
 import numpy as np
 
-def ln_factorial(n):
+def ln_factorial(k):
     value = 0.0
-    for i in range(1,n+1):
+    for i in range(1,k+1):
         value += np.float32(np.log(i))
     return value
 
