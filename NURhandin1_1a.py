@@ -18,3 +18,12 @@ print(ln_poisson(2.6,40))
 print(ln_poisson(101,200))
 
 print("The value is",np.float32(np.exp(ln_poisson(1,0))))
+print("The value is",np.float32(np.exp(ln_poisson(5,10))))
+print("The value is",np.float32(np.exp(ln_poisson(3,21))))
+print("The value is",np.float32(np.exp(ln_poisson(2.6,40))))
+print("The value is",np.float32(np.exp(ln_poisson(101,200))))
+
+lambda_input = np.float32(input('please input lambda:\n'))
+k_input = np.int32(input('please input k:\n'))
+print("The value is",np.float32(np.exp(ln_poisson(lambda_input, k_input))))
+
